@@ -1,0 +1,43 @@
+Créer le projet :
+
+Installer Node JS version Lts (long therm support) si pas déja fait.  (npm : node package manager)
+
+Vérifier les versions sur le cmd: node -v 
+
+installer angular si pas déjà fait : npm i -g @angular/cli (au global)
+
+vérifier la version angular sur le cmd: ng v
+
+Aller dans le dossier où l'on souhaite créer le projet puis dans le temrinal taper:
+ng new snapface --style=scss --skip-tests=true  
+(--style=scss indique que les feuilles de styles seront en scss et --skip-tests=true  dit que vous ne voulez pas générer 
+de fichiers de tests unitaires pour ce projet).
+
+lancer l'app avec la commande : ng serve 
+
+ http://localhost:4200  sur ce localhost
+
+ On peut créer de nouveau component, pour cela il faut la commande:
+ ng generate component nom-du-component (ou n g c nom-du-component)
+
+ Dans notre nouveau component on déclare les propriétés d'un component en haut de sa classe, 
+ et on les initialise dans la méthode  ngOnInit()
+
+La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques
+La directive prend comme argument un objet où les clés correspondent aux styles CSS à modifier
+ et les valeurs aux valeurs que doivent prendre ces styles.
+
+La directive  [ngClass]  permet d'ajouter dynamiquement des classes à des éléments HTML.
+Cette directive prend un objet en argument où les clés sont des noms de classe CSS 
+et les valeurs sont les conditions selon lesquelles les classes doivent être appliquées.
+
+
+Le app.component doit servir généralement qu'aux élements structuraux principaux. Pour cela que l'on crée des components spécialisés 
+comme face-snap-list qui lui sert à créer notre liste d'éléments (ici de faceSnap).
+
+Dans notre application on utilisera aussi des services. Les services sont comme des classes qui permettent de facilité l'échanges de nos 
+données/d'informations et donc de réutiliser du code entre différents components.
+
+Pour utiliser un service dans un component voulu il faut alors injecté la dépendance. On passe dans le constructeur de notre component
+un argument du type de notre service. Comme par exemple "private faceSnapsServices : FaceSnapsService"  a mettre en attribut du
+constructeur du component face-snap-list

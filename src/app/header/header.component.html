@@ -1,0 +1,10 @@
+<header>
+  <h1>snapface</h1>
+  <nav>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a><!--active permet ajouter 
+      une extension css lorsque la route est active et exact true considère que seul la route précise est active
+    sans ça notre bouton home serait souligné aussi même si on était sur la page localhost:4200/facesnap-->
+    <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
+  </nav>
+  <button (click)="onAddNewFaceSnap()">+</button>
+</header>

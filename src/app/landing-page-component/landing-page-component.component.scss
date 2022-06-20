@@ -1,0 +1,15 @@
+.landing-block {
+
+  text-align: center;
+  }
+  
+  .landing-links {
+    width: 100%;
+    text-align: center;
+  }
+button{
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: lightgray 0 0 5px;
+  }
+}

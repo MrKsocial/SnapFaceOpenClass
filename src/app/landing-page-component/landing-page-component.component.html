@@ -1,0 +1,19 @@
+<div class="landing-block">
+  <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+    <!-- une référence locale, créée avec un dièse  #  comme ci-dessus,
+       permet à Angular d'accéder à l'élément pour, par exemple, l'envoyer comme argument à une méthode, 
+      ici dans notre ngSubmit -->
+
+    <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
+    <input type="email" id="emailInput" name='userEmail' [(ngModel)]="userEmail">
+    <!--Le two-way binding [()] lie totalement la valeur de la variable à la valeur du  <input>-->
+    <button type="submit">OK!</button>
+  </form>
+  <img src="assets/snapface.png" alt="Snapface logo">
+  <div class="landing-links">
+    <button (click)="onContinue()">Continuer vers Snapface</button>
+  </div>
+</div>
+
+<!-- <app-face-snap [faceSnap]="faceSnap" class="randomSnap"></app-face-snap> -->
+<app-single-face-snap [faceSnap]="faceSnap"></app-single-face-snap>
